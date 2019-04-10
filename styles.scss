@@ -1,0 +1,153 @@
+$font-stack:	'Avenir', Helvetica, sans-serif;
+
+%movingintro1
+{
+	height: 50px;
+	overflow: hidden;
+	position: relative;
+}
+
+.movingintro1
+{
+	font: 93% $font-stack;
+}
+
+footer
+{
+	text-align: center;
+	font-size: 9px
+}
+
+.thead
+{
+	font-weight: bolder;
+}
+
+address
+{
+	text-align: center;
+	padding-top: 150px;
+}
+
+blockquote
+{
+	position: relative;
+	top: 50%;
+}
+
+
+.movingintro1
+{
+	@extend %movingintro1;
+	
+	h1
+	{
+		/* font size 4em means 20px times 4 = 80px */
+		font-size: 4em;
+		color: black;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		line-height: 50px;
+		text-align: center;
+
+		/* Starting position */
+		-moz-transform:translateX(100%);
+		-webkit-transform:translateX(100%);
+		transform:translateX(100%);
+		/* Apply animation to this element */
+		-moz-animation: movingintro1 15s linear infinite;
+		-webkit-animation: movingintro1 15s linear infinite;
+		animation: movingintro1 15s linear infinite;
+	}
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes movingintro1
+{
+	0%   { -moz-transform: translateX(100%); }
+ 	100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes movingintro1
+{
+	0%   { -webkit-transform: translateX(100%); }
+	100% { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes movingintro1
+{
+	0% {
+		-moz-transform: translateX(100%); /* Firefox bug fix */
+ 		-webkit-transform: translateX(100%); /* Firefox bug fix */
+ 		transform: translateX(100%);
+ 	}
+ 	100% {
+		-moz-transform: translateX(-100%); /* Firefox bug fix */
+		-webkit-transform: translateX(-100%); /* Firefox bug fix */
+		transform: translateX(-100%);
+ 	}
+}
+/* End of style for all html pages */
+
+#films
+{
+	height: 100%;
+	width: 100%;
+	background-color: lightgrey;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 20px;
+
+	img
+	{
+		height: auto;
+		width: 200px;
+		padding: 10px
+	}
+}
+
+#reizen
+{
+	height: 100%;
+	width: 100%;
+	background-color: lightgrey;
+	text-align: center;
+	padding-top: 10px;
+
+	img
+	{
+		height: 150px;
+		width: 250px;
+		padding: 10px
+	}
+}
+
+#kaart
+{
+	height: 100%;
+	width: 100%;
+	background-color: lightgrey;
+	text-align: center;
+	padding-top: 10px;
+}
+
+@media only screen and (min-width: 800px)
+{
+	#kaart img
+	{
+		height: 500px;
+		width: 800px;
+		padding: 10px
+	}
+}
+
+@media only screen and (max-width: 800px)
+{
+	#kaart img
+	{
+		height: 250px;
+		width: 400px;
+		padding: 10px
+	}
+}
